@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schema xmlns="http://www.w3.org/2001/XMLSchema"
+        targetNamespace="http://jwd.by/med-product"
+        xmlns:c="http://jwd.by/med-product"
+        elementFormDefault="qualified">
+
+    <element name="med-product" type="c:med-product" abstract="true"/>
+    <element name="medicine" type="c:medicine" substitutionGroup="c:med-product"/>
+    <element name="baa" type="c:baa" substitutionGroup="c:med-product"/>
+
+    <element name="med-catalog">
+        <complexType>
+            <sequence>
+                <element ref="c:med-product" maxOccurs="unbounded"/>
+            </sequence>
+        </complexType>
+    </element>
+
+    <complexType name="med-product">
+        <sequence>
+            <element name="name" type="string"/>
+            <element name="pharm" type="string"/>
+            <element name="group" type="c:drug-group"/>
+            <element name="analogs" type="c:list-string"/>
+            <element name="version" type="c:drug-version"/>
+        </sequence>
+        <attribute name="id" type="c:med-product-id" use="required"/>
+        <attribute name="out-of-production" type="boolean" use="optional" default="false"/>
+    </complexType>
+
+    <complexType name="medicine">
+        <complexContent>
+            <extension base="c:med-product">
+                <sequence>
+                    <element name="active-substance" type="string"/>
+                    <element name="need-recipe" type="boolean"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="baa">
+        <complexContent>
+            <extension base="c:med-product">
+                <sequence>
+                    <element name="composition" type="c:list-string"/>
+                </sequence>
+            </extension>
+        </complexContent>
+    </complexType>
+
+    <complexType name="drug-version">
+        <sequence>
+            <element name="country" type="c:country"/>
+            <element name="certificate" type="string"/>
+            <element name="pack" type="c:pack"/>
+            <element name="dosage" type="c:dosage"/>
+            <element name="expiration-date" type="gYearMonth"/>
+        </sequence>
+    </complexType>
+
+    <simpleType name="drug-group">
+        <restriction base="string">
+            <enumeration value="antipyretic"/>
+            <enumeration value="antiviral"/>
+            <enumeration value="antibiotic"/>
+            <enumeration value="vitamin"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="country">
+        <restriction base="string">
+            <enumeration value="Belarus"/>
+            <enumeration value="Poland"/>
+            <enumeration value="Hungary"/>
+            <enumeration value="Germany"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="pack">
+        <restriction base="string">
+            <enumeration value="Pill"/>
+            <enumeration value="Capsule"/>
+            <enumeration value="Mixture"/>
+        </restriction>
+    </simpleType>
+
+    <simpleType name="dosage">
+        <restriction base="string">
+            <pattern value="\d{1,4}mg" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="med-product-id">
+        <restriction base="ID">
+            <pattern value="\w{1,10}" />
+        </restriction>
+    </simpleType>
+
+    <simpleType name="list-string">
+        <list itemType="string" />
+    </simpleType>
+
+</schema>

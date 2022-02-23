@@ -1,0 +1,180 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<med-catalog
+        xmlns="http://jwd.by/med-product"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://jwd.by/med-product schema.xsd">
+
+    <medicine id = "med1">
+        <name>Paracetamol</name>
+        <pharm>BelMed</pharm>
+        <group>antipyretic</group>
+        <analogs>Ibufen Aspirin</analogs>
+        <version>
+            <country>Belarus</country>
+            <certificate>45-08c</certificate>
+            <pack>Pill</pack>
+            <dosage>100mg</dosage>
+            <expiration-date>2023-04</expiration-date>
+        </version>
+        <active-substance>paracetamol</active-substance>
+        <need-recipe>false</need-recipe>
+    </medicine>
+
+    <medicine id = "med2" out-of-production = "true">
+        <name>Normomed</name>
+        <pharm>Pharm company</pharm>
+        <group>antiviral</group>
+        <analogs>Groprinosin</analogs>
+        <version>
+            <country>Poland</country>
+            <certificate>47-23a</certificate>
+            <pack>Capsule</pack>
+            <dosage>500mg</dosage>
+            <expiration-date>2022-12</expiration-date>
+        </version>
+        <active-substance>pranobex</active-substance>
+        <need-recipe>true</need-recipe>
+    </medicine>
+
+    <medicine id = "med3" out-of-production = "false">
+        <name>Ibufen</name>
+        <pharm>BelMed</pharm>
+        <group>antipyretic</group>
+        <analogs>Paracetamol Aspirin</analogs>
+        <version>
+            <country>Belarus</country>
+            <certificate>27-16c</certificate>
+            <pack>Mixture</pack>
+            <dosage>200mg</dosage>
+            <expiration-date>2023-10</expiration-date>
+        </version>
+        <active-substance>ibuprofen</active-substance>
+        <need-recipe>false</need-recipe>
+    </medicine>
+
+    <medicine id = "med4">
+        <name>Aspirin</name>
+        <pharm>BelMed</pharm>
+        <group>antipyretic</group>
+        <analogs>Paracetamol Ibufen</analogs>
+        <version>
+            <country>Belarus</country>
+            <certificate>29-58c</certificate>
+            <pack>Pill</pack>
+            <dosage>100mg</dosage>
+            <expiration-date>2024-01</expiration-date>
+        </version>
+        <active-substance>acetylsalicylic acid</active-substance>
+        <need-recipe>false</need-recipe>
+    </medicine>
+
+    <medicine id = "med5">
+        <name>Ampicillin</name>
+        <pharm>Pharmlend</pharm>
+        <group>antibiotic</group>
+        <analogs>Penicillin Amoxicillin</analogs>
+        <version>
+            <country>Germany</country>
+            <certificate>48-72a</certificate>
+            <pack>Pill</pack>
+            <dosage>300mg</dosage>
+            <expiration-date>2023-08</expiration-date>
+        </version>
+        <active-substance>ampicillin</active-substance>
+        <need-recipe>true</need-recipe>
+    </medicine>
+
+    <medicine out-of-production = "true" id = "med6">
+        <name>Penicillin</name>
+        <pharm>Pharmlend</pharm>
+        <group>antibiotic</group>
+        <analogs>Ampicillin Amoxicillin</analogs>
+        <version>
+            <country>Germany</country>
+            <certificate>35-71a</certificate>
+            <pack>Mixture</pack>
+            <dosage>150mg</dosage>
+            <expiration-date>2023-01</expiration-date>
+        </version>
+        <active-substance>penicillin</active-substance>
+        <need-recipe>true</need-recipe>
+    </medicine>
+
+    <medicine id = "med7">
+        <name>Amoxicillin</name>
+        <pharm>BelMed</pharm>
+        <group>antibiotic</group>
+        <analogs>Ampicillin Penicillin</analogs>
+        <version>
+            <country>Belarus</country>
+            <certificate>76-49a</certificate>
+            <pack>Pill</pack>
+            <dosage>200mg</dosage>
+            <expiration-date>2022-09</expiration-date>
+        </version>
+        <active-substance>amoxicillin</active-substance>
+        <need-recipe>true</need-recipe>
+    </medicine>
+
+    <medicine id = "med8" out-of-production = "false">
+        <name>Groprinosin</name>
+        <pharm>Gedeon Richter</pharm>
+        <group>antiviral</group>
+        <analogs>Normomed</analogs>
+        <version>
+            <country>Hungary</country>
+            <certificate>37-28a</certificate>
+            <pack>Capsule</pack>
+            <dosage>500mg</dosage>
+            <expiration-date>2022-12</expiration-date>
+        </version>
+        <active-substance>inosine pranobex</active-substance>
+        <need-recipe>false</need-recipe>
+    </medicine>
+
+    <baa id = "med9">
+        <name>Vita</name>
+        <pharm>Gedeon Richter</pharm>
+        <group>vitamin</group>
+        <analogs>Vitrum Alphabet</analogs>
+        <version>
+            <country>Hungary</country>
+            <certificate>69-28v</certificate>
+            <pack>Capsule</pack>
+            <dosage>100mg</dosage>
+            <expiration-date>2023-07</expiration-date>
+        </version>
+        <composition>B6, B12, D, C, A, E, Na, Cl</composition>
+    </baa>
+
+    <baa id = "med10">
+        <name>Vitrum</name>
+        <pharm>Pharmlend</pharm>
+        <group>vitamin</group>
+        <analogs>Vita Alphabet</analogs>
+        <version>
+            <country>Poland</country>
+            <certificate>29-23v</certificate>
+            <pack>Capsule</pack>
+            <dosage>300mg</dosage>
+            <expiration-date>2022-11</expiration-date>
+        </version>
+        <composition>C, A, E, Na, Cl, K, Mg, Ca</composition>
+    </baa>
+
+    <baa id = "med11">
+        <name>Alphabet</name>
+        <pharm>BelMed</pharm>
+        <group>vitamin</group>
+        <analogs>Vita Vitrum</analogs>
+        <version>
+            <country>Belarus</country>
+            <certificate>45-17v</certificate>
+            <pack>Pill</pack>
+            <dosage>150mg</dosage>
+            <expiration-date>2023-02</expiration-date>
+        </version>
+        <composition>C, A, E, Ph, B1, B12, Mg, Ca, B6</composition>
+    </baa>
+
+</med-catalog>
