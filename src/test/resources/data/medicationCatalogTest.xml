@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<med-catalog
+        xmlns="http://jwd.by/med-product"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://jwd.by/med-product schema.xsd">
+
+    <medicine id = "med1">
+        <name>Paracetamol</name>
+        <pharm>BelMed</pharm>
+        <group>antipyretic</group>
+        <analogs>Ibufen Aspirin</analogs>
+        <version>
+            <country>Belarus</country>
+            <certificate>45-08c</certificate>
+            <pack>Pill</pack>
+            <dosage>100mg</dosage>
+            <expiration-date>2023-04</expiration-date>
+        </version>
+        <active-substance>paracetamol</active-substance>
+        <need-recipe>false</need-recipe>
+    </medicine>
+
+    <baa id = "med2">
+        <name>Vitrum</name>
+        <pharm>Pharmlend</pharm>
+        <group>vitamin</group>
+        <analogs>Vita Alphabet</analogs>
+        <version>
+            <country>Poland</country>
+            <certificate>29-23v</certificate>
+            <pack>Capsule</pack>
+            <dosage>300mg</dosage>
+            <expiration-date>2022-11</expiration-date>
+        </version>
+        <composition>C A E Na Cl K Mg Ca</composition>
+    </baa>
+</med-catalog>

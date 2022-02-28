@@ -34,7 +34,7 @@
         </version>
         <active-substance>pranobex</active-substance>
         <need-recipe>true</need-recipe>
-    </medicine>
+    </medicine
 
     <medicine id = "med3" out-of-production = "false">
         <name>Ibufen</name>

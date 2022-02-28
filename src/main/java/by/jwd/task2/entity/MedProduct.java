@@ -87,73 +87,31 @@ public abstract class MedProduct {
     }
 
     @Override
-    public int hashCode() {
-        final int prime = 31;
-        int result = 1;
-        result = prime * result + ((analogs == null) ? 0 : analogs.hashCode());
-        result = prime * result + ((group == null) ? 0 : group.hashCode());
-        result = prime * result + ((medProductId == null) ? 0 : medProductId.hashCode());
-        result = prime * result + ((name == null) ? 0 : name.hashCode());
-        result = prime * result + (outOfProduction ? 1231 : 1237);
-        result = prime * result + ((pharm == null) ? 0 : pharm.hashCode());
-        result = prime * result + ((version == null) ? 0 : version.hashCode());
-        return result;
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        MedProduct that = (MedProduct) o;
+
+        if (outOfProduction != that.outOfProduction) return false;
+        if (medProductId != null ? !medProductId.equals(that.medProductId) : that.medProductId != null) return false;
+        if (name != null ? !name.equals(that.name) : that.name != null) return false;
+        if (pharm != null ? !pharm.equals(that.pharm) : that.pharm != null) return false;
+        if (group != that.group) return false;
+        if (analogs != null ? !analogs.equals(that.analogs) : that.analogs != null) return false;
+        return version != null ? version.equals(that.version) : that.version == null;
     }
 
     @Override
-    public boolean equals(Object obj) {
-        if (this == obj) {
-            return true;
-        }
-        if (obj == null) {
-            return false;
-        }
-        if (getClass() != obj.getClass()) {
-            return false;
-        }
-        MedProduct other = (MedProduct) obj;
-        if(analogs == null) {
-            if(other.analogs != null) {
-                return false;
-            }
-        } else if (!analogs.equals(other.analogs)) {
-            return false;
-        }
-        if(!group.equals(other.group)) {
-            return false;
-        }
-        if(medProductId == null) {
-            if(other.medProductId != null) {
-                return false;
-            }
-        } else if (!medProductId.equals(other.medProductId)) {
-            return false;
-        }
-        if(name == null) {
-            if(other.name != null) {
-                return false;
-            }
-        } else if (!name.equals(other.name)) {
-            return false;
-        }
-        if(outOfProduction != other.outOfProduction) {
-            return false;
-        }
-        if(pharm == null) {
-            if(other.pharm != null) {
-                return false;
-            }
-        } else if (!pharm.equals(other.pharm)) {
-            return false;
-        }
-        if(version == null) {
-            if(other.version != null) {
-                return false;
-            }
-        } else if (!version.equals(other.version)) {
-            return false;
-        }
-        return true;
+    public int hashCode() {
+        int result = medProductId != null ? medProductId.hashCode() : 0;
+        result = 31 * result + (outOfProduction ? 1 : 0);
+        result = 31 * result + (name != null ? name.hashCode() : 0);
+        result = 31 * result + (pharm != null ? pharm.hashCode() : 0);
+        result = 31 * result + (group != null ? group.hashCode() : 0);
+        result = 31 * result + (analogs != null ? analogs.hashCode() : 0);
+        result = 31 * result + (version != null ? version.hashCode() : 0);
+        return result;
     }
 
     @Override
@@ -227,60 +185,29 @@ public abstract class MedProduct {
             this.dosage = dosage;
         }
 
-
         @Override
-        public int hashCode() {
-            final int prime = 31;
-            int result = 1;
-            result = prime * result + ((country == null) ? 0 : country.hashCode());
-            result = prime * result + ((certificate == null) ? 0 : certificate.hashCode());
-            result = prime * result + ((expirationDate == null) ? 0 : expirationDate.hashCode());
-            result = prime * result + ((pack == null) ? 0 : pack.hashCode());
-            result = prime * result + ((dosage == null) ? 0 : dosage.hashCode());
-            return result;
+        public boolean equals(Object o) {
+            if (this == o) return true;
+            if (o == null || getClass() != o.getClass()) return false;
+
+            DrugVersion that = (DrugVersion) o;
+
+            if (country != that.country) return false;
+            if (certificate != null ? !certificate.equals(that.certificate) : that.certificate != null) return false;
+            if (expirationDate != null ? !expirationDate.equals(that.expirationDate) : that.expirationDate != null)
+                return false;
+            if (pack != that.pack) return false;
+            return dosage != null ? dosage.equals(that.dosage) : that.dosage == null;
         }
 
         @Override
-        public boolean equals(Object obj) {
-            if (this == obj) {
-                return true;
-            }
-            if (obj == null) {
-                return false;
-            }
-            if (getClass() != obj.getClass()) {
-                return false;
-            }
-            DrugVersion other = (DrugVersion) obj;
-
-            if (country != other.country) {
-                return false;
-            }
-            if (certificate == null) {
-                if (other.certificate != null) {
-                    return false;
-                }
-            } else if (!certificate.equals(other.certificate)) {
-                return false;
-            }
-            if (expirationDate == null) {
-                if (other.expirationDate != null) {
-                    return false;
-                }
-            } else if (!expirationDate.equals(other.expirationDate)) {
-                return false;
-            }
-            if (pack != other.pack) {
-                return false;
-            }
-            if (dosage == null) {
-                if (other.dosage != null) {
-                    return false;
-                }
-            } else if (!dosage.equals(other.dosage)) {
-                return false;
-            }
-            return true;
+        public int hashCode() {
+            int result = country != null ? country.hashCode() : 0;
+            result = 31 * result + (certificate != null ? certificate.hashCode() : 0);
+            result = 31 * result + (expirationDate != null ? expirationDate.hashCode() : 0);
+            result = 31 * result + (pack != null ? pack.hashCode() : 0);
+            result = 31 * result + (dosage != null ? dosage.hashCode() : 0);
+            return result;
         }
 
         @Override

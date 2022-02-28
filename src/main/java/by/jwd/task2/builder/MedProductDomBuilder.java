@@ -30,7 +30,7 @@ public class MedProductDomBuilder extends MedProductBuilder {
         try {
             documentBuilder = factory.newDocumentBuilder();
         } catch (ParserConfigurationException e) {
-            logger.error(e);
+            logger.error("Ошибка конфигурации парсера ", e);
         }
     }
 
